@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        const calculaImc = () => {
+            const alturaEntrada = parseFloat(document.imcForm.elements["altura"].value);
+            const peso = parseFloat(document.imcForm.elements["peso"].value);
+             if(alturaEntrada>3.0){
+                const alturaConvertida = alturaEntrada/100
+                const imc = peso / (alturaConvertida*alturaConvertida);
+
+                if( imc < 18.5){
+                    alert('você esta abaixo do peso')
+                }
+                else if(imc >= 18.5 && imc < 25){
+                    alert('Você esta com o peso normal')
+                }   
+                else if(imc >= 25 && imc < 30){
+                    alert('Você esta sobrepeso')
+                }
+                else if(imc >= 30 && imc < 40){
+                    alert('Você esta com obesidade')
+                }
+                else if(imc >=40){
+                    alert('Você esta com obesidade grave')
+                }
+               
+             }   
+                
+            else { imc = peso / (alturaEntrada*alturaEntrada);
+
+                if( imc < 18.5){
+                    alert('você esta abaixo do peso')
+                }
+                else if(imc >= 18.5 && imc < 25){
+                    alert('Você esta com o peso normal')
+                }   
+                else if(imc >= 25 && imc < 30){
+                    alert('Você esta sobrepeso')
+                }
+                else if(imc >= 30 && imc < 40){
+                    alert('Você esta com obesidade')
+                }
+                else if(imc >=40){
+                    alert('Você esta com obesidade grave')
+                }
+
+        }  }
+    </script>
+</head>
+<body>
+    <form id="imcForm" name="imcForm" action="#">
+        <label for="altura" >Altura</label>
+        <input type="number"  id="altura" name="altura">
+        <br>
+        <br>
+        <label for="peso"></label>Peso</label>
+        <input type="number" id="peso" name="peso">
+        <br>
+        <br>
+        <br>
+        <input id="calcular" type="submit" value="Calcular" onclick="calculaImc()">
+    </form>
+    
+</body>
+</html>                    
